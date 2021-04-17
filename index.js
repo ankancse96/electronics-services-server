@@ -68,6 +68,18 @@ client.connect(err => {
     
   })
 
+  app.get('/totalOrders',(req,res)=>{
+  
+  
+    bookingCollection.find({})
+    .toArray((err,documents) =>{
+        console.log('from database',documents)
+      res.send(documents);
+      })
+   
+    
+  })
+
   app.get('/engineers', (req, res) => {
     engineerCollection.find({})
         .toArray((err, documents) => {
